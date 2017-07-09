@@ -68,7 +68,10 @@ ROBOTSTXT_OBEY = True
 #    'ParsingPDF.pipelines.ParsingpdfPipeline': 300,
 #}
 
-ITEM_PIPELINES = {'scrapy.pipelines.files.FilesPipeline': 1}
+ITEM_PIPELINES = {
+    'scrapy.pipelines.files.FilesPipeline': 1,
+    'ParsingPDF.pipelines.ParsingpdfPipeline' : 1
+}
 
 FILES_URLS_FIELD = 'file_urls'
 FILES_RESULT_FIELD = 'files'
