@@ -12,6 +12,9 @@ from scrapy.http import Request
 
 class ParsingpdfPipeline(FilesPipeline):
 
+    connection = None
+    cursor = None
+
     def get_media_requests(self, item, info):
         meta = {
             'filename': item['company_name']
@@ -32,7 +35,10 @@ class ParsingpdfPipeline(FilesPipeline):
         return '%s.%s' % (filename, 'pdf')
 
     def parse_pdf(self, path):
-        self.current += 1
+        if not self.connection:
+            psycopg2.connect(host='localhost', database='scrapy_example_com', user='postgres')
+            self.cursor = self.connection.cursor()
+
         try:
             df = read_pdf(path, output_format='json')
         except:
