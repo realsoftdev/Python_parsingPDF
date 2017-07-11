@@ -6,12 +6,11 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 from scrapy.pipelines.files import FilesPipeline
-from tabula import read_pdf, convert_into
+from tabula import read_pdf
+import psycopg2
 from scrapy.http import Request
 
 class ParsingpdfPipeline(FilesPipeline):
-
-    current = 0
 
     def get_media_requests(self, item, info):
         meta = {
@@ -35,8 +34,7 @@ class ParsingpdfPipeline(FilesPipeline):
     def parse_pdf(self, path):
         self.current += 1
         try:
-            df = convert_into(path, str(self.current) + '.csv', output_format='csv')
-            print 'parsing'
+            df = read_pdf(path, output_format='json')
         except:
             print 'parsing error'
         pass
