@@ -27,7 +27,7 @@ queuelib==1.5.0
 requests==2.25.1
 Scrapy==2.4.1
 service-identity==18.1.0
-six==1.10.0
+six==1.15.0
 tabula-py==0.9.0
 Twisted==17.5.0
 urllib3==1.21.1
