@@ -17,7 +17,7 @@ numpy==1.19.4
 pandas==1.1.5
 parsel==1.6.0
 pyasn1==0.4.8
-pyasn1-modules==0.0.9
+pyasn1-modules==0.2.8
 pycparser==2.18
 PyDispatcher==2.0.5
 pyOpenSSL==17.1.0
