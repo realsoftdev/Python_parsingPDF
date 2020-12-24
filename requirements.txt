@@ -22,7 +22,7 @@ pycparser==2.20
 PyDispatcher==2.0.5
 pyOpenSSL==20.0.1
 python-dateutil==2.8.1
-pytz==2017.2
+pytz==2020.4
 queuelib==1.4.2
 requests==2.18.1
 Scrapy==1.4.0
