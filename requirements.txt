@@ -13,7 +13,7 @@ idna==2.10
 incremental==17.5.0
 ipaddress==1.0.23
 lxml==4.6.2
-numpy==1.13.1
+numpy==1.19.4
 pandas==0.20.2
 parsel==1.2.0
 pyasn1==0.2.3
